@@ -30,7 +30,8 @@ DROP TABLE IF EXISTS cuentas;
 SET FOREIGN_KEY_CHECKS = 1;
 
 -- ---------------------------------------------------------------------
---  TABLAS
+--  TABLAS  (sin CHARSET/COLLATE propios: heredan los de la BD, igual que los
+--  parámetros de los procedimientos; así no hay "Illegal mix of collations")
 -- ---------------------------------------------------------------------
 
 -- Usuarios del sistema (los tres roles en una sola tabla). El cajero y el
@@ -52,7 +53,7 @@ CREATE TABLE usuarios (
     CONSTRAINT ck_usuarios_cuenta_rol CHECK (
         (rol = 'CLIENTE' AND id_cuenta IS NOT NULL) OR
         (rol <> 'CLIENTE' AND id_cuenta IS NULL))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB;
 
 -- Cuentas bancarias (las crea un cajero). El saldo nunca puede ser negativo.
 CREATE TABLE cuentas (
@@ -68,7 +69,7 @@ CREATE TABLE cuentas (
     KEY ix_cuentas_fecha (fecha_creacion),
     CONSTRAINT ck_cuentas_saldo CHECK (saldo >= 0),
     CONSTRAINT fk_cuentas_cajero FOREIGN KEY (id_cajero) REFERENCES usuarios (id_usuario)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB;
 
 ALTER TABLE usuarios
     ADD CONSTRAINT fk_usuarios_cuenta FOREIGN KEY (id_cuenta) REFERENCES cuentas (id_cuenta);
@@ -90,7 +91,7 @@ CREATE TABLE cuentas_terceros (
     CONSTRAINT ck_terceros_max_tx CHECK (max_transacciones_diarias >= 1),
     CONSTRAINT fk_terceros_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario),
     CONSTRAINT fk_terceros_cuenta FOREIGN KEY (id_cuenta_destino) REFERENCES cuentas (id_cuenta)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB;
 
 -- Transferencias realizadas (cabecera de la operación; sólo existen las exitosas).
 CREATE TABLE transferencias (
@@ -108,7 +109,7 @@ CREATE TABLE transferencias (
     CONSTRAINT fk_transf_origen FOREIGN KEY (id_cuenta_origen) REFERENCES cuentas (id_cuenta),
     CONSTRAINT fk_transf_destino FOREIGN KEY (id_cuenta_destino) REFERENCES cuentas (id_cuenta),
     CONSTRAINT fk_transf_tercero FOREIGN KEY (id_tercero) REFERENCES cuentas_terceros (id_tercero)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB;
 
 -- Libro de movimientos: cada operación deja una línea por cuenta afectada.
 -- (Una transferencia genera 2 líneas: débito en origen y crédito en destino.)
@@ -130,7 +131,7 @@ CREATE TABLE movimientos (
     CONSTRAINT fk_mov_cuenta FOREIGN KEY (id_cuenta) REFERENCES cuentas (id_cuenta),
     CONSTRAINT fk_mov_transf FOREIGN KEY (id_transferencia) REFERENCES transferencias (id_transferencia),
     CONSTRAINT fk_mov_cajero FOREIGN KEY (id_cajero) REFERENCES usuarios (id_usuario)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
 --  STORED PROCEDURES
