@@ -4,6 +4,8 @@ Proyecto académico de **Desarrollo Web** (Universidad Mariano Gálvez de Guatem
 
 ![Banco PJS](banca/assets/img/banner.jpg)
 
+**Pruébalo en línea:** <http://bancopjs.atwebpages.com> (hosting gratuito; ábrelo con `http://`, sin HTTPS).
+
 ## Qué incluye
 - **Cliente:** registro, cuentas de terceros, transferencias (transaccionales) y estado de cuenta.
 - **Cajero:** crear cuentas, depósitos y retiros.
@@ -29,7 +31,7 @@ docs/            vitrina estática para GitHub Pages
 3. Opcional: `02_datos_demo_opcional.sql` para datos de prueba.
 4. Sirva la carpeta `banca/` con Apache y abra `http://localhost/banca/`.
 
-Para un hosting con PHP + MySQL, siga [documentacion/GUIA_PUBLICAR_HOSTING.md](documentacion/GUIA_PUBLICAR_HOSTING.md).
+Publicado en AwardSpace (gratis, sin tarjeta). Para un hosting con PHP + MySQL, siga [documentacion/GUIA_PUBLICAR_HOSTING.md](documentacion/GUIA_PUBLICAR_HOSTING.md).
 
 > **Nota de seguridad:** las credenciales de los scripts SQL son de demostración. Cambie la contraseña del administrador antes de usar el sistema con datos reales.
 
