@@ -1,0 +1,2 @@
+# Configuración (contiene credenciales de BD): no se sirve por HTTP
+Require all denied
