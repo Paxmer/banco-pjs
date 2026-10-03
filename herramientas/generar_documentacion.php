@@ -32,7 +32,7 @@ add($B, 'p', '**Universidad Mariano Gálvez de Guatemala** · Facultad de Ingeni
 add($B, 'h1', 'Datos de entrega');
 add($B, 'table', ['Dato', 'Valor'], [
     ['Integrante del equipo', 'Pablo Javier Sandoval · Carné 0900-21-4333'],
-    ['Enlace de acceso al sitio (hosting gratuito)', '[PENDIENTE: escribir aquí la URL del sitio una vez publicado en el hosting]'],
+    ['Enlace de acceso al sitio (hosting gratuito)', 'http://bancopjs.atwebpages.com  (hosting gratuito AwardSpace; el plan gratuito no incluye HTTPS, abrir con http://)'],
     ['Usuario administrador', '`admin`'],
     ['Clave del administrador', '`Admin2026!`'],
     ['Base de datos entregada', 'En blanco: sólo contiene el usuario administrador (script 01_esquema_y_procedimientos.sql)'],
