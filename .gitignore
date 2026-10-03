@@ -1,0 +1,7 @@
+banca/config/config.local.php
+banca/logs/*
+!banca/logs/.htaccess
+documentacion/*.docx
+*.log
+.DS_Store
+Thumbs.db
