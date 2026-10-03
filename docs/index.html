@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banco PJS | Banca en línea retro pixel-art</title>
+<meta name="description" content="Banco PJS: sistema de banca en línea con HTML5, CSS3, PHP y MySQL (stored procedures), con diseño retro pixel-art gamer.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=VT323&amp;display=swap">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<style>.sec{margin:34px 0}.chips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}.chips .badge{font-size:.7rem;padding:8px 12px}.cta{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:24px 0}</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap topbar-in">
+  <a class="brand" href="#"><img src="assets/img/logo_pjs.png" alt="Logo de Banco PJS" width="52" height="52"><span class="brand-text">Banco PJS<small>Banca en Línea &middot; Player 1 ready</small></span></a>
+</div></header>
+<main class="wrap">
+  <section class="hero">
+    <img class="banner" src="assets/img/banner.jpg" alt="Ciudad pixel-art de noche con el edificio del Banco PJS y monedas flotantes" width="1280" height="720">
+    <h1>Banco PJS</h1>
+    <p>Sistema de banca en línea con alma de arcade: cuentas, depósitos, retiros y transferencias con transacciones seguras.</p>
+    <p class="press-start blink">&#9654; Press start</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/Paxmer/banco-pjs">Ver el código</a>
+      <a class="btn btn-secondary" href="https://github.com/Paxmer/banco-pjs/blob/main/documentacion/GUIA_PUBLICAR_HOSTING.md">Cómo instalarlo</a>
+    </div>
+  </section>
+
+  <section class="sec"><h2>Tres jugadores, tres paneles</h2>
+    <div class="grid grid-3">
+      <div class="tile"><span class="tag">Jugador 1</span><img class="tile-icon" src="assets/img/iconos/jugador.png" alt="" width="64" height="64"><h2>Cliente</h2><p>Registro, cuentas de terceros, transferencias y estado de cuenta.</p></div>
+      <div class="tile"><span class="tag">Tienda</span><img class="tile-icon" src="assets/img/iconos/cajero.png" alt="" width="64" height="64"><h2>Cajero</h2><p>Crear cuentas, depósitos y retiros.</p></div>
+      <div class="tile"><span class="tag">Jefe final</span><img class="tile-icon" src="assets/img/iconos/admin.png" alt="" width="64" height="64"><h2>Administrador</h2><p>Gestión de cajeros y monitor de transferencias con gráfica.</p></div>
+    </div>
+  </section>
+
+  <section class="sec"><h2>Hecho con cuidado</h2>
+    <div class="grid grid-3">
+      <div class="tile"><img class="tile-icon" src="assets/img/iconos/llave.png" alt="" width="64" height="64"><h2>Seguridad</h2><p>Contraseñas con bcrypt, sesiones, protección CSRF, control de roles y salida HTML escapada.</p></div>
+      <div class="tile"><img class="tile-icon" src="assets/img/iconos/transferir.png" alt="" width="64" height="64"><h2>Transacciones</h2><p>Transferencias con COMMIT y ROLLBACK dentro de stored procedures; probadas con concurrencia.</p></div>
+      <div class="tile"><img class="tile-icon" src="assets/img/iconos/monitor.png" alt="" width="64" height="64"><h2>Pruebas</h2><p>145 pruebas automáticas contra Apache y MySQL, incluidas inyección SQL, XSS, CSRF e IDOR.</p></div>
+    </div>
+  </section>
+
+  <section class="sec center"><h2>Tecnologías</h2>
+    <div class="chips"><span class="badge">HTML5</span><span class="badge">CSS3</span><span class="badge">PHP 8</span><span class="badge">MySQL 8</span><span class="badge">Apache</span><span class="badge badge-ok">Stored procedures</span></div>
+    <p class="muted" style="margin-top:22px">Esta página es una vitrina estática. La aplicación necesita PHP y MySQL, por lo que corre en un hosting con PHP (ver la guía de instalación).</p>
+  </section>
+</main>
+<footer class="footer"><div class="wrap">&copy; 2026 Banco PJS &middot; Proyecto académico de Desarrollo Web &middot; Universidad Mariano Gálvez de Guatemala</div></footer>
+</body>
+</html>
